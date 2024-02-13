@@ -1,7 +1,7 @@
 #######################################################
 #
 # Purpose: Handles main flask program for website
-# Website: 
+# Website Host: 
 # Author: Jacob Janzen
 # Last Updated: 12/10/2020
 #
@@ -12,7 +12,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 # app.secret_key = 'your_secret_key'  # Change this to a secure secret key
 
-valid_user = {'name': 'Kiannah', 'valid_answers': ['Jacob', 'jacob', 'jacob janzen', 'Jacob Janzen', 'Boyfriend', 'boyfriend']}
+valid_user = {'name': 'Kiannah', 'valid_answers': ['gummies', 'gummi', 'gummy', 'gummys']}
 
 
 @app.route('/')
@@ -68,4 +68,5 @@ def no_valentine():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='warm-daifuku-6e5f40.netlify.app')
+    app.run(debug=False)
+    
