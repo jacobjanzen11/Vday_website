@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #FFB6C1;  /* Darkish red color */
+            color: #8B0000;  /* Light pink text color */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(255, 182, 193, 0.626);  /* Pink backglow effect */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            font-size: 3.0em;  /* Adjusted font size */
+            margin-bottom: 20px;  /* Increased space between question and buttons */
+        }
+
+        .error {
+            color: #FF0000;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label>LUV</label>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
