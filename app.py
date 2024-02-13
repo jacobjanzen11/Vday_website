@@ -68,4 +68,4 @@ def no_valentine():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='warm-daifuku-6e5f40.netlify.app')
