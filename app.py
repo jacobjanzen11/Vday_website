@@ -12,7 +12,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 # app.secret_key = 'your_secret_key'  # Change this to a secure secret key
 
-valid_user = {'name': 'Kiannah', 'valid_answers': ['Jacob', 'jacob', 'jacob janzen', 'Jacob Janzen', 'Boyfriend', 'boyfriend']}  # Replace with actual answers
+valid_user = {'name': 'Kiannah', 'valid_answers': ['Jacob', 'jacob', 'jacob janzen', 'Jacob Janzen', 'Boyfriend', 'boyfriend']}
 
 
 @app.route('/')
@@ -31,7 +31,6 @@ def login():
     if request.method == 'POST':
         answer = request.form.get('answer')
 
-        # Dummy authentication logic (replace with your actual logic)
         if answer.lower() == 'yes': # and valid_user['name'].lower() == 'jacob'
             # Redirect to the security question page
             return redirect(url_for('security_question'))
@@ -49,13 +48,11 @@ def security_question():
     if request.method == 'POST':
         security_answer = request.form.get('security_answer')
 
-        # Dummy security question logic (replace with your actual logic)
         if security_answer.lower() in valid_user['valid_answers']:
             return redirect(url_for('index'))
 
         else:
-            error = 'Incorrect answer. Please try again.'
-            return render_template('security_question.html', error=error)
+            return render_template('try_again.html')
 
     return render_template('security_question.html', error=error)
 
